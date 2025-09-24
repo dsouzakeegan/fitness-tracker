@@ -1,0 +1,312 @@
+/* Billing Components Styles */
+
+/* Custom animations */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.5);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Plan cards hover effects */
+.plan-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15) !important;
+}
+
+.plan-card.popular {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Stripe Elements custom styling */
+.StripeElement {
+  box-sizing: border-box;
+  height: 50px;
+  padding: 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df, 0 0 0 2px #ff6b35;
+  border-color: #ff6b35;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+  box-shadow: 0 1px 3px 0 #cfd7df, 0 0 0 2px #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+/* Payment form styles */
+.payment-form-overlay {
+  animation: slideIn 0.3s ease-out;
+  backdrop-filter: blur(4px);
+}
+
+.payment-form-container {
+  animation: slideIn 0.3s ease-out 0.1s both;
+}
+
+/* Subscription status indicators */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-indicator.active {
+  background: #f6ffed;
+  color: #52c41a;
+  border: 1px solid #b7eb8f;
+}
+
+.status-indicator.warning {
+  background: #fffbe6;
+  color: #faad14;
+  border: 1px solid #ffe58f;
+}
+
+.status-indicator.error {
+  background: #fff2f0;
+  color: #ff4d4f;
+  border: 1px solid #ffccc7;
+}
+
+/* Progress bar customization */
+.billing-progress .ant-progress-bg {
+  background: linear-gradient(90deg, #ff6b35 0%, #f7931e 100%) !important;
+}
+
+/* Table customization */
+.payment-history-table .ant-table-thead > tr > th {
+  background: #fafafa;
+  border-bottom: 2px solid #f0f0f0;
+  font-weight: 600;
+  color: #262626;
+}
+
+.payment-history-table .ant-table-tbody > tr:hover > td {
+  background: #f8f9ff;
+}
+
+.payment-history-table .ant-table-row-alternate {
+  background: #fafafa;
+}
+
+/* Card hover effects */
+.billing-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.billing-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+/* Button customizations */
+.billing-button-primary {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+  transition: all 0.3s ease;
+}
+
+.billing-button-primary:hover {
+  background: linear-gradient(135deg, #e55a2b 0%, #e0841a 100%);
+  box-shadow: 0 6px 16px rgba(255, 107, 53, 0.5);
+  transform: translateY(-1px);
+}
+
+.billing-button-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+}
+
+/* Icon containers */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.icon-container:hover {
+  transform: scale(1.05);
+}
+
+/* Typography */
+.billing-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #262626;
+  margin: 0;
+}
+
+.billing-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin: 8px 0 0 0;
+}
+
+.billing-price {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ff6b35;
+  line-height: 1;
+}
+
+.billing-price-period {
+  font-size: 16px;
+  color: #666;
+  font-weight: normal;
+}
+
+/* Loading states */
+.billing-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.billing-skeleton {
+  animation: pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .billing-title {
+    font-size: 24px;
+  }
+  
+  .billing-price {
+    font-size: 28px;
+  }
+  
+  .plan-card {
+    margin-bottom: 16px;
+  }
+  
+  .payment-form-container {
+    margin: 10px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+  }
+  
+  .billing-filters {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .billing-filters > * {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .billing-title {
+    font-size: 20px;
+  }
+  
+  .billing-price {
+    font-size: 24px;
+  }
+  
+  .status-indicator {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+  .StripeElement {
+    background-color: #1f1f1f;
+    border-color: #3a3a3a;
+    color: #ffffff;
+  }
+  
+  .StripeElement--focus {
+    border-color: #ff6b35;
+    box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 0 0 2px #ff6b35;
+  }
+}
+
+/* Animation delays for staggered loading */
+.billing-card:nth-child(1) { animation-delay: 0.1s; }
+.billing-card:nth-child(2) { animation-delay: 0.2s; }
+.billing-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Focus states for accessibility */
+.billing-button-primary:focus,
+.plan-card:focus {
+  outline: 2px solid #ff6b35;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .billing-button-primary {
+    background: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  .status-indicator.active {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+  }
+}
